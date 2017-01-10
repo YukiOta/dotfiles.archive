@@ -8,6 +8,10 @@ export PKG_CONFIG_PATH
 
 export PATH="/usr/local/bin:/opt/local/bin:/home/lab/urasam/bin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin:/opt/local/bin:/home/lab/urasam/bin:/usr/X11R6/bin"
 
+
+#MySQL
+export PATH=$PATH:/Applications/MAMP/Library/bin
+
 #Python Path
 PYENV_ROOT=~/.pyenv
 export PATH=$PATH:$PYENV_ROOT/bin
@@ -19,6 +23,9 @@ if [ -d "${PYENV_ROOT}" ]; then
     export PATH=${PYENV_ROOT}/bin:$PATH
     eval "$(pyenv init -)"
 fi
+
+#alias
+alias activate="source $PYENV_ROOT/versions/anaconda3-4.2.0/bin/activate"
 
 #基本設定#{{{
 
