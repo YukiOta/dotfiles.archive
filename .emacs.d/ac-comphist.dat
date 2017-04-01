@@ -1,11 +1,19 @@
-((("solarized" .
+((("elpy-use-ipython" .
+   [0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0])
+  ("highlight-indentation-current-column-face" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("highlight" .
+   [0 0 0 0 0 0 0 0 1])
+  ("elpy" .
+   [1 0 0 0])
+  ("solarized" .
    [0 0 0 0 1 0 0 0 0])
   ("solarized-color-blend" .
    [0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
   ("keras" .
    [2 0 0 0 1])
   ("numbers" .
-   [0 0 1 0 0 0 0])
+   [0 0 2 0 0 0 0])
   ("jedi:setup-function" .
    [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
   ("jedi:setup" .
@@ -49,11 +57,11 @@
   ("menu-bar-mode" .
    [0 0 0 0 0 0 0 0 1 0 0 0 0])
   ("numpy" .
-   [1 0 0 0 2])
+   [1 0 1 0 2])
   ("import" .
    [0 0 0 0 0 1])
   ("set-face-background" .
-   [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1])
+   [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 2])
   ("default" .
    [0 0 0 0 0 0 2])
   ("set-face-foreground" .
@@ -75,7 +83,7 @@
   ("set-buffer-file-coding-system" .
    [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
   ("setq" .
-   [16 0 0 2])
+   [19 0 0 2])
   ("default-buffer-file-coding-system" .
    [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
   ("set-default-coding-systems" .
@@ -187,7 +195,7 @@
   ("cask-initialize" .
    [0 0 0 0 0 0 0 0 1 0 0 0 0 0 1])
   ("system-type" .
-   [0 0 0 0 0 1 0 0 0 0 1])
+   [0 0 0 0 0 1 1 0 0 0 1])
   ("when" .
    [1 0 0 0])
   ("equal" .
@@ -205,7 +213,7 @@
   ("jedi" .
    [1 0 0 0])
   ("setenv" .
-   [2 0 0 0 0 0])
+   [3 0 0 0 0 0])
   ("flymake" .
    [0 0 0 0 0 0 1])
   ("pyflakes" .
@@ -253,4 +261,24 @@
   ("asdf" .
    [0 0 0 1])
   ("electric-pair-mode" .
-   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])))
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("frame-title-format" .
+   [0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0])
+  ("format" .
+   [1 0 0 0 0 0])
+  ("system-name" .
+   [0 0 0 0 0 0 0 0 0 1 0])
+  ("Elpyを有効化" .
+   [0 0 0 0 0 1 0 0])
+  ("elpy-enable" .
+   [0 0 0 0 1 0 0 0 0 0 0])
+  ("defvar" .
+   [1 0 0 0 0 0])
+  ("~/.pyenv/versions/" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("pyvenv-activate" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1])
+  ("venv-default" .
+   [0 0 0 0 1 0 0 0 0 0 0 0])
+  ("python-shell-interpreter" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2])))

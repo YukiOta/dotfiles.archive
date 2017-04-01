@@ -1,3 +1,11 @@
+;;<C-RET>で矩形選択
+;;(cua-mode t)
+;;(setq cua-enable-cua-keys nil)
+
+;;タイトルバーにフルパスの表示
+(setq frame-title-format
+      (format "%%f - Emacs@%s"(system-name)))
+
 ;;初期表示位置，サイズ
 (setq initial-frame-alist
       '((left . 523)
@@ -16,7 +24,7 @@
 ;;backupファイルオープン時のバックアップ
 ;;
 ;;バックアップファイルを作成する
-(setq make-backup-files t)
+(setq make-backup-files nil)
 ;;格納ディレクトリーの変更
 ;;(対象ディレクトリ . 格納ディレクトリ)のリスト
 (setq backup-directory-alist '((".*" . "~/.ehist")))
@@ -116,12 +124,3 @@
 ;;カスタマイズ用のファイルをロード
 (load custom-file t)
 
-;;環境を日本語，UTF-8にする
-(set-locale-environment nil)
-(set-language-environment "Japanese")
-(set-terminal-coding-system 'utf-8)
-(set-keyboard-coding-system 'utf-8)
-(set-buffer-file-coding-system 'utf-8)
-(setq default-buffer-file-coding-system 'utf-8)
-(set-default-coding-systems 'utf-8)
-(prefer-coding-system 'utf-8)

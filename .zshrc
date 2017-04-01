@@ -161,4 +161,5 @@ SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 
 
 alias ls="ls -GF"
-
+alias sshwaseda="ssh yukiota@murata.eb.waseda.ac.jp"
+alias e="emacs"

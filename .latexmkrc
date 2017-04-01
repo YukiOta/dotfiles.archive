@@ -27,7 +27,7 @@ if ($^O eq 'darwin') {
 
 
 
-#!/usr/bin.perl
+##!/usr/bin.perl
 #$latex = 'platex -interaction=nonstopmode -kanji=utf-8 %O %S';
 #$dvipdf = 'dvipdfmx %O -o %D %S';
 #$bibtex = 'pbibtex';
@@ -39,7 +39,7 @@ if ($^O eq 'darwin') {
 # $pvc_view_file_via_temporary = 0;
 
 
-#!/usr/bin/env perl
+##!/usr/bin/env perl
 #
 ## Commands
 #$latex            = 'platex -synctex=1 -halt-on-error';
