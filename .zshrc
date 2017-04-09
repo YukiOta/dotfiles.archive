@@ -9,10 +9,16 @@ export PKG_CONFIG_PATH
 export PATH="/usr/local/bin:/opt/local/bin:/home/lab/urasam/bin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin:/opt/local/bin:/home/lab/urasam/bin:/usr/X11R6/bin"
 
 
+#virtualenvwrapper --- virtualenvの仮想環境をworkonで管理{{{
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    export WORKON_HOME=~/.virtualenvs
+    source /usr/local/bin/virtualenvwrapper.sh
+fi# }}}
+
 #MySQL
 export PATH=$PATH:/Applications/MAMP/Library/bin
 
-#Python Path
+#Python関連 {{{
 PYENV_ROOT=~/.pyenv
 export PATH=$PATH:$PYENV_ROOT/bin
 eval "$(pyenv init -)"
@@ -24,8 +30,8 @@ if [ -d "${PYENV_ROOT}" ]; then
     eval "$(pyenv init -)"
 fi
 
-#alias
-alias activate="source $PYENV_ROOT/versions/anaconda3-4.2.0/bin/activate"
+#anacondaをpyenvで管理する時に書いたalias
+alias activate="source $PYENV_ROOT/versions/anaconda3-4.2.0/bin/activate"# }}}
 
 #基本設定#{{{
 

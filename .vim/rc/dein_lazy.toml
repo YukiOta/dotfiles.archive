@@ -1,4 +1,8 @@
 # 特定のファイルタイプで読み込む
+
+[[plugins]]
+repo = 'jmcantrell/vim-virtualenv'
+
 [[plugins]]
 repo = 'davidhalter/jedi-vim'
 on_ft = 'python'
@@ -12,6 +16,19 @@ hook_add ='''
   let g:jedi#documentation_command = "K"
   let g:jedi#usages_command = "<leader>n"
   let g:jedi#rename_command = "<leader>R" 
-  autocmd FileType python setlocal completeopt-=preview 
+  autocmd FileType python setlocal omnifunc=jedi#completions
+  let g:jedi#auto_vim_comfiguration = 0
+  if !exists('g:neocomplete#force_omni_input_patterns')
+		  let g:neocomplete#force_omni_input_patterns = {}
+  endif
+  let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
 '''  
+
+[[plugins]]
+#構文チェックの追加
+repo = 'scrooloose/syntastic'
+hook_add ='''
+let g:syntastic_python_checkers = ['pyflakes','flake8']
+'''
+
 

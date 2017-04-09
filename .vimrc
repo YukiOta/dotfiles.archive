@@ -1,3 +1,11 @@
+"個人設定
+"vimrcをスペースドットで開く
+nnoremap <space>. :<c-u>tabedit $MYVIMRC<CR>
+"INSERT中に，素早くjjと入力した場合はESCとみなす
+inorema jj <Esc>
+"spaceを<Leader>キーにする
+let mapleader = "\<space>"
+
 " mode line
 set modeline
 set wildmenu
@@ -114,8 +122,7 @@ endif
 " let g:neosnippet#snippets_directory=s:bundle_root
 "}}}
 
-
-" dein.vimのもろもろはここから
+" dein.vimのもろもろはここから"{{{
 
 
 " Vim起動完了時にインストール
@@ -162,7 +169,7 @@ if dein#check_install()
 endif
 
 "dein.vimのもろもろはここまで
-
+"}}}
 
 " lightline.vim Settings"{{{
 let g:lightline = {
@@ -243,6 +250,7 @@ augroup precious-indentLine
   autocmd User PreciousFileType IndentLinesReset
 augroup END
 "}}}
+
 "syntastic"{{{
 let g:syntastic_enable_signs = 1
 let g:syntastic_error_symbol = '✗'
@@ -270,18 +278,4 @@ let g:syntastic_javascript_checker = "jshint"
  set statusline+=%{SyntasticStatuslineFlag()}
  set statusline+=%*
 "}}}
-
-"colorscheme Settings/**/
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-let g:solarized_degrade=0
-let g:solarized_bold=1
-let g:solarized_underline=1
-let g:solarized_italic=1
-let g:solarized_contrast="high"
-let g:solarized_visibility="high"
-set background=dark
-colorscheme solarized
-call togglebg#map("")
-
 
