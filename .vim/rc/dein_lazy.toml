@@ -25,10 +25,5 @@ hook_add ='''
 '''  
 
 [[plugins]]
-#構文チェックの追加
-repo = 'scrooloose/syntastic'
-hook_add ='''
-let g:syntastic_python_checkers = ['pyflakes','flake8']
-'''
-
-
+repo = 'andviro/flake8-vim'
+on_ft = 'python'

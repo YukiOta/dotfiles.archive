@@ -13,12 +13,14 @@ export PATH="/usr/local/bin:/opt/local/bin:/home/lab/urasam/bin:/usr/bin:/usr/X1
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     export WORKON_HOME=~/.virtualenvs
     source /usr/local/bin/virtualenvwrapper.sh
-fi# }}}
+fi
+# }}}
 
 #MySQL
 export PATH=$PATH:/Applications/MAMP/Library/bin
 
-#Python関連 {{{
+#{{{ Python関連
+
 PYENV_ROOT=~/.pyenv
 export PATH=$PATH:$PYENV_ROOT/bin
 eval "$(pyenv init -)"
@@ -31,7 +33,10 @@ if [ -d "${PYENV_ROOT}" ]; then
 fi
 
 #anacondaをpyenvで管理する時に書いたalias
-alias activate="source $PYENV_ROOT/versions/anaconda3-4.2.0/bin/activate"# }}}
+alias activate="source $PYENV_ROOT/versions/anaconda3-4.2.0/bin/activate"
+
+# }}}
+
 
 #基本設定#{{{
 
@@ -166,6 +171,6 @@ SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 
 
 
-alias ls="ls -GF"
+alias ls="ls -a"
 alias sshwaseda="ssh yukiota@murata.eb.waseda.ac.jp"
-alias e="emacs"
+alias e="emac"
