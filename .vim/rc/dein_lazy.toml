@@ -1,4 +1,3 @@
-# 特定のファイルタイプで読み込む
 
 [[plugins]]
 repo = 'jmcantrell/vim-virtualenv'
@@ -27,3 +26,4 @@ hook_add ='''
 [[plugins]]
 repo = 'andviro/flake8-vim'
 on_ft = 'python'
+
