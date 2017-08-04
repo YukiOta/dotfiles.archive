@@ -1,29 +1,57 @@
-"個人設定
+"個人設定(キーバインド)
 "vimrcをスペースドットで開く
 nnoremap <space>. :<c-u>tabedit $MYVIMRC<CR>
 "INSERT中に，素早くjjと入力した場合はESCとみなす
-inorema jj <Esc>
+inoremap jj <Esc>
 "spaceを<Leader>キーにする
 let mapleader = "\<space>"
+" 表示行で移動する
+noremap j gj
+noremap k gk
+
+"移動する
+noremap <Leader>h ^
+noremap <Leader>l $
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>t gt
+nnoremap <Leader>T gT
+nnoremap <Leader><Tab> <C-w>w
+
+" 検索によるハイライトを解除する
+nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
+
 
 " mode line
 set modeline
 set wildmenu
-set wildmode=list,longest:full
+set wildmode=list:longest,full
 set showtabline=2
 set foldmethod=marker
 set laststatus=2
 set t_Co=256
 set nocompatible
 
+" ヒストリーの設定
+set history=1000
+
 " 行番号の表示
 set nu
 
 " 右下に表示される行・列の番号を表示
 set ruler
+set colorcolumn=80
+set cursorline
+
+" スワップファイルを作らあい
+set noswapfile
+
+" 入力中のコマンドをひょうじする
+set showcmd
 
 " 自動インデントを有効にする
 set autoindent
+set autoread
 
 "C言語スタイルのインデントを自動で入れる
 set cindent
@@ -55,8 +83,8 @@ set hlsearch
 " 検索文字に大文字が含まれる場合にignorecaseをOFFにする(大文字小文字を区別する)
 set smartcase
 
-" コマンドラインにおける補完候補の表示
-set wildmenu
+" 改行入力業の末尾にあわせてインデントを増減
+set smartindent
 
 " Deleteキーを有効にする
 set t_kD=^?
@@ -82,6 +110,7 @@ set title
 
 " ウィンドウの幅より長い行は折り返して表示
 set wrap
+set wrapscan
 
 "バッファをクリップボードにコピー(for OSX)
 set clipboard=unnamed,autoselect
@@ -101,26 +130,6 @@ set whichwrap=b,s,h,l,<,>,[,]
 
 
 inoremap <C-f> <Esc>
-
-" neosnippet "{{{
-" <C-J> にマッピング. スニペット補完
-" Plugin key-mappings.
-" imap <C-J> <Plug>(neosnippet_expand_or_jump)
-smap <C-J> <Plug>(neosnippet_expand_or_jump)
-xmap <C-J> <Plug>(neosnippet_expand_target)
-"" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)"
-      \: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)"
-      \: "\<TAB>"
-"" For snippet_complete marker.
-if has('conceal')
-  set conceallevel=2 concealcursor=i
-endif
-" let g:neosnippet#snippets_directory=s:bundle_root
-"}}}
 
 " dein.vimのもろもろはここから"{{{
 
@@ -156,7 +165,7 @@ if dein#load_state(s:dein_dir)
 
   " 設定終了
   call dein#end()
-  call dein#save_state() 
+  call dein#save_state()
 endif
 
 "これを書かないと毎回読んでくれないのかな…？
@@ -169,113 +178,5 @@ if dein#check_install()
 endif
 
 "dein.vimのもろもろはここまで
-"}}}
-
-" lightline.vim Settings"{{{
-let g:lightline = {
-      \ 'colorscheme': 'default',
-      \ 'mode_map': { 'c': 'NORMAL' },
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename', 'virtualenv' ] ]
-      \ },
-      \ 'component_function': {
-      \   'modified': 'MyModified',
-      \   'readonly': 'MyReadonly',
-      \   'fugitive': 'MyFugitive',
-      \   'filename': 'MyFilename',
-      \   'virtualenv': 'MyVirtualenv',
-      \   'fileformat': 'MyFileformat',
-      \   'filetype': 'MyFiletype',
-      \   'fileencoding': 'MyFileencoding',
-      \   'mode': 'MyMode',
-      \ },
-      \ 'separator': { 'left': '⮀', 'right': '⮂' },
-      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
-      \ }
-
-function! MyModified()
-  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
-endfunction
-
-function! MyReadonly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '⭤' : ''
-endfunction
-
-function! MyFilename()
-  return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
-        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
-        \  &ft == 'unite' ? unite#get_status_string() :
-        \  &ft == 'vimshell' ? vimshell#get_status_string() :
-        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
-        \ ('' != MyModified() ? ' ' . MyModified() : '')
-endfunction
-
-function! MyFugitive()
-  if &ft !~? 'vimfiler\|gundo' && exists("*fugitive#head")
-    let _ = fugitive#head()
-    return strlen(_) ? '⭠ '._ : ''
-  endif
-  return ''
-endfunction
-
-function! MyVirtualenv()
-  if &ft !~? 'help\|vimfiler\|gundo' && exists("*virtualenv#statusline")
-    let _ = virtualenv#statusline()
-    return strlen(_) ? '✇ '._ : ''
-  endif
-  return ''
-endfunction
-" ✇☤⚒ ⚖ ⚚
-function! MyFileformat()
-  return winwidth(0) > 70 ? &fileformat : ''
-endfunction
-
-function! MyFiletype()
-  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
-endfunction
-
-function! MyFileencoding()
-  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
-endfunction
-
-function! MyMode()
-  return winwidth(0) > 60 ? lightline#mode() : ''
-endfunction
-"}}}
-
-" indentLine"{{{
-augroup precious-indentLine
-  autocmd!
-  " precious.vim が filetype を切り替える度に indentLine をリセットする
-  autocmd User PreciousFileType IndentLinesReset
-augroup END
-"}}}
-
-"syntastic"{{{
-let g:syntastic_enable_signs = 1
-let g:syntastic_error_symbol = '✗'
-let g:syntastic_warning_symbol = '⚠'
-let g:syntastic_style_error_symbol = '✑'
-let g:syntastic_style_warning_symbol = '✏︎'
-" ✍ ✏︎ ✒︎ ✄ ✂︎ ☕︎ ✑ ☹ ⚡︎ ☞
-let g:syntastic_mode_map = { 'mode': 'passive',
-      \ 'active_filetypes': ['ruby', 'c', 'go', 'php'],
-      \ 'passive_filetypes': ['html']
-      \}
-" let g:syntastic_auto_loc_list=1
-noremap \gs :<C-u>SyntasticToggleMode<CR>
-noremap \gc :<C-u>SyntasticCheck<CR>
-noremap \gl :<C-u>SyntasticSetLoclist<CR>
-let g:syntastic_enable_highlighting=1
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_enable_r_svtools_checker=1
-let g:syntastic_enable_r_lint_checker=1
-" let g:syntastic_r_lint_styles = 'list(spacing.indentation.notabs, spacing.indentation.evenindent)'
-let g:syntastic_r_checkers = ['svtools', 'lint']
-let g:syntastic_python_checker = 'flake8'
-let g:syntastic_javascript_checker = "jshint"
- set statusline+=%#warningmsg#
- set statusline+=%{SyntasticStatuslineFlag()}
- set statusline+=%*
 "}}}
 
