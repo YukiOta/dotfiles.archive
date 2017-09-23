@@ -12,6 +12,7 @@ zplug "zsh-users/zsh-syntax-highlighting"
 zplug "mafredri/zsh-async", from:github
 zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 zplug "zsh-users/zsh-completions"
+zplug "mollifier/anyframe"
 
 # 未インストール項目をインストール
 if ! zplug check --verbose; then
@@ -42,6 +43,10 @@ export PKG_CONFIG_PATH
 
 #PATHのおまじない
 export PATH="/usr/local/bin:/opt/local/bin:/home/lab/urasam/bin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin:/opt/local/bin:/home/lab/urasam/bin:/usr/X11R6/bin"
+
+#VLFeatのPATH
+export VLFEATROOT=$HOME/src/vlfeat-0.9.20
+export PATH=$VLFEATROOT/bin/maci64:$PATH
 
 #MySQL
 export PATH=$PATH:/Applications/MAMP/Library/bin
@@ -179,5 +184,29 @@ alias la="ls -a"
 alias ll="ls -lafg"
 alias sshwaseda="ssh yukiota@murata.eb.waseda.ac.jp"
 alias e="emac"
+alias vi="vim"
+alias jupyterqt="jupyter qtconsole --style=monokai --ConsoleWidget.font_family="Ricty" --ConsoleWidget.font_size=12"
 # }}}
 
+# zplugの設定{{{
+bindkey '^xb' anyframe-widget-cdr
+bindkey '^x^b' anyframe-widget-checkout-git-branch
+
+bindkey '^xr' anyframe-widget-execute-history
+bindkey '^x^r' anyframe-widget-execute-history
+
+bindkey '^xp' anyframe-widget-put-history
+bindkey '^x^p' anyframe-widget-put-history
+
+bindkey '^xg' anyframe-widget-cd-ghq-repository
+bindkey '^x^g' anyframe-widget-cd-ghq-repository
+
+bindkey '^xk' anyframe-widget-kill
+bindkey '^x^k' anyframe-widget-kill
+
+bindkey '^xi' anyframe-widget-insert-git-branch
+bindkey '^x^i' anyframe-widget-insert-git-branch
+
+bindkey '^xf' anyframe-widget-insert-filename
+bindkey '^x^f' anyframe-widget-insert-filename
+# }}}

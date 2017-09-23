@@ -1,3 +1,8 @@
+" Myautocmdの初期化
+augroup MyAutoCmd
+	autocmd!
+augroup END
+
 "個人設定(キーバインド)
 "vimrcをスペースドットで開く
 nnoremap <space>. :<c-u>tabedit $MYVIMRC<CR>
