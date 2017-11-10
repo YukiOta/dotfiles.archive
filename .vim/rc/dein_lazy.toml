@@ -26,3 +26,11 @@ on_ft = 'python'
 repo = 'tell-k/vim-autopep8'
 on_ft = 'python'
 
+[[plugins]]
+repo = 'KeitaNakamura/tex-conceal.vim'
+on_ft = 'tex'
+hook_add = '''
+set conceallevel=2
+let g:tex_conceal='adgmd'
+set concealcursor=""
+'''

@@ -10,9 +10,7 @@ nnoremap <space>. :<c-u>tabedit $MYVIMRC<CR>
 inoremap jj <Esc>
 "spaceを<Leader>キーにする
 let mapleader = "\<space>"
-" 表示行で移動する
-noremap j gj
-noremap k gk
+let maplocalleader = '.'
 
 "移動する
 noremap <Leader>h ^
@@ -26,6 +24,7 @@ nnoremap <Leader><Tab> <C-w>w
 " 検索によるハイライトを解除する
 nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
 
+" texのconceal機能を無効にする
 
 " mode line
 set modeline
@@ -119,11 +118,6 @@ set wrapscan
 
 "バッファをクリップボードにコピー(for OSX)
 set clipboard=unnamed,autoselect
-
-" release autogroup in MyAutoCmd
-augroup MyAutoCmd
-  autocmd!
-augroup END
 
 "In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
