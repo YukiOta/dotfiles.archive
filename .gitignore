@@ -1,0 +1,5 @@
+# emacsいらないからignore
+/.emacs.d
+
+# python versionもいらない
+/.python-version
