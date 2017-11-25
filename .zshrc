@@ -186,6 +186,29 @@ alias sshwaseda="ssh yukiota@murata.eb.waseda.ac.jp"
 alias e="emac"
 alias vi="vim"
 alias jupyterqt="jupyter qtconsole --style=monokai --ConsoleWidget.font_family="Ricty" --ConsoleWidget.font_size=12"
+
+# gitlazy
+# コメントを特に指定しなければ空欄，コメントがあればコメント指定してcommit and push
+gitlazy() {
+    git commit --allow-empty-message -am “$*”
+    git push
+}
+
+# mountの設定
+mountlab(){
+    netname=$(networksetup -getairportnetwork en0)
+    if [ $netname = "Current Wi-Fi Network: MurataLab" ]; then
+        sshfs caca:/home ~/mountpoint/home
+        sshfs caca:/home/lab/yukiota ~/mountpoint/yukiota
+    else
+        sshfs murata.eb.waseda.ac.jp:/home ~/mountpoint/home
+        sshfs murata.eb.waseda.ac.jp:/home/lab/yukiota ~/mountpoint/yukiota
+    fi
+}
+unmountlab(){
+    umount ~/mountpoint/home
+    umount ~/mountpoint/yukiota
+}
 # }}}
 
 # zplugの設定{{{
