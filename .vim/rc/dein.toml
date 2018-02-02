@@ -20,27 +20,6 @@ end
 [[plugins]]
 repo = 'Xuyuanp/nerdtree-git-plugin'
 
-[[plugins]]
-repo = 'rakr/vim-one'
-hook_add = '''
-let g:airline_theme='one'
-colorscheme one
-set background=dark
-let g:airline_theme='one'
-'''
-
-[[plugins]]
-repo = 'vim-airline/vim-airline'
-hook_add = '''
-let g:airline_theme='one'
-let g:airline_powerline_font = 1
-let g:airline#extensions#tabline#enable = 1
-'''
-
-[[plugins]]
-repo = 'vim-airline/vim-airline-themes'
-hook_add = '''
-'''
 
 
 [[plugins]]
@@ -140,3 +119,22 @@ hook_add = '''
 let g:tex_flavor="latex"
 '''
 
+[[plugins]]
+repo = 'rakr/vim-one'
+hook_add = '''
+colorscheme one
+set background=dark
+'''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+hook_add = '''
+let g:airline_powerline_font = 1
+let g:airline#extensions#tabline#enable = 1
+'''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+hook_add = '''
+let g:airline_theme='onedark'
+'''

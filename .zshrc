@@ -35,7 +35,7 @@ export HISTSIZE=1000
 export SAVEHIST=100000
 
 # editorの設定
-export EDITOR=vim
+export EDITOR=nvim
 
 #パッケージコンフィグのpath
 PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/Cellar/opencv/2.4.13.1/lib/pkgconfig
@@ -50,12 +50,15 @@ export PATH=$VLFEATROOT/bin/maci64:$PATH
 
 #MySQL
 export PATH=$PATH:/Applications/MAMP/Library/bin
+
+# blender
+export PATH=$PATH:/Applications/blender-2.79-macOS-10.6/blender.app/Contents/MacOS/blender/
 # }}}
 
 #virtualenvwrapper --- virtualenvの仮想環境をworkonで管理{{{
 if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    export WORKON_HOME=~/.virtualenvs
-    source /usr/local/bin/virtualenvwrapper.sh
+	export WORKON_HOME=~/.virtualenvs
+	source /usr/local/bin/virtualenvwrapper.sh
 fi
 # }}}
 
@@ -68,8 +71,8 @@ eval "$(pyenv virtualenv-init -)"
 
 export PYENV_ROOT="${HOME}/.pyenv"
 if [ -d "${PYENV_ROOT}" ]; then
-    export PATH=${PYENV_ROOT}/bin:$PATH
-    eval "$(pyenv init -)"
+	export PATH=${PYENV_ROOT}/bin:$PATH
+	eval "$(pyenv init -)"
 fi
 
 #anacondaをpyenvで管理する時に書いたalias
@@ -126,7 +129,7 @@ setopt LIST_TYPES
 #C-Uで行頭まで削除
 bindkey "^U" backward-kill-line
 # 履歴中の重複行を全て削除する
-setopt hist_ignore_all_dups    
+setopt hist_ignore_all_dups
 # 直前と重複するコマンドを記録しない
 setopt hist_ignore_dups
 # autoload predict-on
@@ -153,7 +156,7 @@ zstyle ':completion:*:default' menu select=1
 # Start tmux on every shell login# {{{
 # https://wiki.archlinux.org/index.php/Tmux#Start_tmux_on_every_shell_login
 ##if which tmux 2>&1 >/dev/null; then
-  #if not inside a tmux session, and if no session is started, start a new session
+#if not inside a tmux session, and if no session is started, start a new session
 ##  test -z "$TMUX" && (tmux attach || tmux new-session)
 ##fi
 # }}}
@@ -185,32 +188,30 @@ alias ll="ls -lafg"
 alias sshwaseda="ssh yukiota@murata.eb.waseda.ac.jp"
 alias e="emac"
 alias vi="vim"
-alias jupyterqt="jupyter qtconsole --style=monokai --ConsoleWidget.font_family="Ricty" --ConsoleWidget.font_size=12"
+alias jupyterqt='jupyter qtconsole --style=monokai --ConsoleWidget.font_family="Ricty" --ConsoleWidget.font_size=12'
 alias blender="alias blender=/Applications/blender-2.79-macOS-10.6/blender.app/Contents/MacOS/blender"
-alias vimr='open -a VimR'
-export PATH=$PATH:/Applications/blender-2.79-macOS-10.6/blender.app/Contents/MacOS/blender/
 
 # gitlazy
 # コメントを特に指定しなければ空欄，コメントがあればコメント指定してcommit and push
 gitlazy() {
-    git commit --allow-empty-message -am “$*”
-    git push
+	git commit --allow-empty-message -am “$*”
+	git push
 }
 
 # mountの設定
 mountlab(){
-    netname=$(networksetup -getairportnetwork en0)
-    if [ $netname = "Current Wi-Fi Network: MurataLab" ]; then
-        sshfs caca:/home ~/mountpoint/home
-        sshfs caca:/home/lab/yukiota ~/mountpoint/yukiota
-    else
-        sshfs murata.eb.waseda.ac.jp:/home ~/mountpoint/home
-        sshfs murata.eb.waseda.ac.jp:/home/lab/yukiota ~/mountpoint/yukiota
-    fi
+	netname=$(networksetup -getairportnetwork en0)
+	if [ $netname = "Current Wi-Fi Network: MurataLab" ]; then
+		sshfs caca:/home ~/mountpoint/home
+		sshfs caca:/home/lab/yukiota ~/mountpoint/yukiota
+	else
+		sshfs murata.eb.waseda.ac.jp:/home ~/mountpoint/home
+		sshfs murata.eb.waseda.ac.jp:/home/lab/yukiota ~/mountpoint/yukiota
+	fi
 }
 unmountlab(){
-    umount ~/mountpoint/home
-    umount ~/mountpoint/yukiota
+	umount ~/mountpoint/home
+	umount ~/mountpoint/yukiota
 }
 # }}}
 
