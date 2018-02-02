@@ -19,6 +19,9 @@ autocmd FileType python setlocal completeopt-=preview
 '''
 
 [[plugins]]
+repo = 'zchee/deoplete-jedi'
+
+[[plugins]]
 repo = 'lambdalisue/vim-pyenv'
 on_ft = 'python'
 

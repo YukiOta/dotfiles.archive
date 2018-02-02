@@ -186,6 +186,9 @@ alias sshwaseda="ssh yukiota@murata.eb.waseda.ac.jp"
 alias e="emac"
 alias vi="vim"
 alias jupyterqt="jupyter qtconsole --style=monokai --ConsoleWidget.font_family="Ricty" --ConsoleWidget.font_size=12"
+alias blender="alias blender=/Applications/blender-2.79-macOS-10.6/blender.app/Contents/MacOS/blender"
+alias vimr='open -a VimR'
+export PATH=$PATH:/Applications/blender-2.79-macOS-10.6/blender.app/Contents/MacOS/blender/
 
 # gitlazy
 # コメントを特に指定しなければ空欄，コメントがあればコメント指定してcommit and push
