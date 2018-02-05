@@ -4,6 +4,3 @@
 # python versionもいらない
 /.python-version
 
-# シンボリックリンク貼られてると延々にgit statusが更新されないから除く
-/.vim/colors
-/.vim/init.vim
