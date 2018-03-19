@@ -1,5 +1,5 @@
 # zplugの設定
-if [ "$(hostname -s)" = "YukiOta" ]; then
+if [ "$(uname)" = "Darwin" ]; then
 	export ZPLUG_HOME=/usr/local/opt/zplug
 	source $ZPLUG_HOME/init.zsh
 else
