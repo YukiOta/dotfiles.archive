@@ -1,16 +1,13 @@
 " Myautocmdの初期化
-" augroup MyAutoCmd
-" 	autocmd!
-" augroup END
+augroup MyAutoCmd
+	autocmd!
+augroup END
 
 " neovim
 if has('nvim')
 	set runtimepath^=~/dotfiles/vim
 	let &packpath = &runtimepath
 endif
-
-" list of plugins
-runtime! plugins.vim
 
 " basics
 runtime! sets.vim
@@ -21,6 +18,8 @@ runtime! keymaps.vim
 " language-specific settings
 " runtime! filetype.vim
 
+" list of plugins
+runtime! plugins.vim
 
 " plugin-specific settings
 " runtime! plugins/*.vim
