@@ -21,10 +21,6 @@ end
 repo = 'Xuyuanp/nerdtree-git-plugin'
 
 
-
-[[plugins]]
-repo = 'cespare/vim-toml'
-
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
 hook_source = '''
@@ -65,15 +61,25 @@ repo = 'Townk/vim-autoclose'
 [[plugins]]
 repo = 'scrooloose/syntastic'
 hook_add = '''
+" error message format
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" open location list with error
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
+
+" check file with open
 let g:syntastic_check_on_open = 1
+" check file with save
+let g:syntastic_check_on_save = 1
+
+" do not check with wq
 let g:syntastic_check_on_wq = 0
+
 let g:syntastic_python_checkers = ["flake8"]
+let g:syntastic_javascript_checkers = ['eslint']
 '''
 
 
@@ -114,27 +120,16 @@ endif
 repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
-repo = 'lervag/vimtex'
-hook_add = '''
-let g:tex_flavor="latex"
-'''
-
-[[plugins]]
 repo = 'rakr/vim-one'
 hook_add = '''
-colorscheme one
-set background=dark
 '''
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
 hook_add = '''
-let g:airline_powerline_font = 1
-let g:airline#extensions#tabline#enable = 1
 '''
 
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
 hook_add = '''
-let g:airline_theme='onedark'
 '''

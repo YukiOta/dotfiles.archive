@@ -1,4 +1,8 @@
 [[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+
+[[plugins]]
 repo = 'davidhalter/jedi-vim'
 on_ft = 'python'
 hook_add = '''
@@ -36,6 +40,13 @@ repo = 'tell-k/vim-autopep8'
 on_ft = 'python'
 
 [[plugins]]
+repo = 'lervag/vimtex'
+on_ft = 'tex'
+hook_add = '''
+let g:tex_flavor="latex"
+'''
+
+[[plugins]]
 repo = 'KeitaNakamura/tex-conceal.vim'
 on_ft = 'tex'
 hook_add = '''
@@ -43,3 +54,14 @@ set conceallevel=2
 let g:tex_conceal='adgmd'
 set concealcursor=""
 '''
+
+[[plugins]]
+repo = 'myhere/vim-nodejs-complete'
+on_ft = 'javascript'
+hook_add = '''
+let g:nodejs_complete_config = {
+\  'js_compl_fn': 'javascriptcomplete#CompleteJS',
+\  'max_node_compl_len': 15
+\}
+'''
+
