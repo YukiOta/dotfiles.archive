@@ -1,11 +1,6 @@
 # zplugの設定
-if [ "$(uname)" = "Darwin" ]; then
-	export ZPLUG_HOME=/usr/local/opt/zplug
-	source $ZPLUG_HOME/init.zsh
-else
-	export ZPLUG_HOME=~/.zplug
-	source $ZPLUG_HOME/init.zsh
-fi
+export ZPLUG_HOME=~/.zplug
+source $ZPLUG_HOME/init.zsh
 
 # pluginの定義
 zplug "zsh-users/zsh-autosuggestions"

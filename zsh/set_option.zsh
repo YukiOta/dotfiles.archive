@@ -36,35 +36,33 @@ LISTMAX=1000
 ## 色を使う
 setopt prompt_subst
 # ## ビープを鳴らさない
-# setopt nobeep
+setopt nobeep
 # ## 補完候補を一覧表示
-# setopt auto_list
-# ## 直前と同じコマンドをヒストリに追加しない
+setopt auto_list
+## 直前と同じコマンドをヒストリに追加しない
 setopt hist_ignore_dups
 # ## TAB で順に補完候補を切り替える
-# setopt auto_menu
+setopt auto_menu
 # ## zsh の開始, 終了時刻をヒストリファイルに書き込む
-# setopt extended_history
-# ## --prefix=/usr などの = 以降も補完
+setopt extended_history
+## --prefix=/usr などの = 以降も補完
 setopt magic_equal_subst
 # ## ヒストリを呼び出してから実行する間に一旦編集
 # setopt hist_verify
 # # ファイル名の展開で辞書順ではなく数値的にソート
 # setopt numeric_glob_sort
-# ## ヒストリを共有
+## ヒストリを共有
 setopt share_history
 # ## ディレクトリ名だけで cd
 # setopt auto_cd
 # ## カッコの対応などを自動的に補完
-# setopt auto_param_keys
+setopt auto_param_keys
 # ## ディレクトリ名の補完で末尾の / を自動的に付加し、次の補完に備える
-# setopt auto_param_slash
+setopt auto_param_slash
 # ## スペルチェック
-# setopt correct
+setopt correct
 # # 履歴中の重複行を全て削除する
 # setopt hist_ignore_all_dups
-# # 直前と重複するコマンドを記録しない
-# setopt hist_ignore_dups
 # # autoload predict-on
 # setopt auto_pushd
 # setopt hist_ignore_dups

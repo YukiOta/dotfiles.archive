@@ -8,3 +8,7 @@ ln -fnsv ~/dotfiles/.tmux.conf ~/.tmux.conf
 ln -fnsv ~/dotfiles/.vimrc ~/.vim/init.vim
 ln -fnsv ~/dotfiles/.vimrc ~/.config/nvim/init.vim
 ln -fnsv ~/dotfiles/.vim ~/.config/nvim
+
+if [ "$(hostname -s)" = "yukiota" ]; then
+	ln -fnsv ~/.zplug /usr/local/opt/zplug
+fi
