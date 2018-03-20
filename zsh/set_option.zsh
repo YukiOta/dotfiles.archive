@@ -6,8 +6,8 @@ export LSCOLORS=cxfxcxdxbxegedabagacad
 export LS_COLORS=$LSCOLORS
 # export LSCOLORS=cxfxcxdxbxegedabagacad
 # export LANG=ja_JP.UTF-8
-# export LANG=en_US.UTF-8
-# export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 # 補完時の色の設定
 # export LS_COLORS='di=34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 # ZLS_COLORSとは？

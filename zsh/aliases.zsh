@@ -1,10 +1,10 @@
 # alias
 case ${OSTYPE} in
   darwin*)
-	alias ls='ls -AGFt'
+	alias ls='ls -tAGF'
     ;;
   freebsd*)
-	alias ls='ls -AGFt'
+	alias ls='ls -tAGF'
     ;;
   linux*)
 	eval "$(dircolors -b)"
@@ -12,7 +12,7 @@ case ${OSTYPE} in
     ;;
 esac
 # alias ls='ls -aF'
-alias ll='ls -l'
+alias l.='ls -d .*'
 alias rm='rm -i'
 alias cp='cp -iv'
 alias mv='mv -iv'

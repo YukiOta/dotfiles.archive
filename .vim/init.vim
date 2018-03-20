@@ -1,1 +1,1 @@
-/home/lab/yukiota/dotfiles/.vimrc
+/Users/YukiOta/dotfiles/.vimrc
