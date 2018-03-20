@@ -1,5 +1,14 @@
 # alias
-alias ls='ls -aF'
+case ${OSTYPE} in
+  darwin*)
+	alias ls='ls -aGF'
+    ;;
+  linux*)
+	eval "$(dircolors -b)"
+	alias ls='ls --color=auto'
+    ;;
+esac
+# alias ls='ls -aF'
 alias ll='ls -l'
 alias rm='rm -i'
 alias cp='cp -iv'

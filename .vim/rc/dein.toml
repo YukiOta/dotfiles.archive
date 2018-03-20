@@ -121,15 +121,9 @@ repo = 'Shougo/neosnippet-snippets'
 
 [[plugins]]
 repo = 'rakr/vim-one'
-hook_add = '''
-'''
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
-hook_add = '''
-'''
 
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
-hook_add = '''
-'''
