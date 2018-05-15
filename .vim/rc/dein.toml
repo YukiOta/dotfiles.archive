@@ -20,7 +20,6 @@ end
 [[plugins]]
 repo = 'Xuyuanp/nerdtree-git-plugin'
 
-
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
 hook_source = '''
@@ -119,6 +118,7 @@ endif
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 
+
 [[plugins]]
 repo = 'rakr/vim-one'
 
@@ -127,3 +127,6 @@ repo = 'vim-airline/vim-airline'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
+
+[[plugins]]
+repo = 'ap/vim-css-color'
