@@ -130,3 +130,6 @@ repo = 'vim-airline/vim-airline-themes'
 
 [[plugins]]
 repo = 'ap/vim-css-color'
+
+[[plugins]]
+repo = 'tpope/vim-surround'

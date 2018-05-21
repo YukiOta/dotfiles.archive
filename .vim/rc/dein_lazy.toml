@@ -65,3 +65,7 @@ let g:nodejs_complete_config = {
 \}
 '''
 
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = ['html', 'ejs']
+
