@@ -44,3 +44,10 @@ colorscheme one
 set background=dark
 syntax on
 
+" ファイルタイプが正しく特定されないので追加
+augroup mydetect
+    autocmd!
+augroup END
+autocmd mydetect BufRead,BufNewFile *.html setlocal filetype=html
+autocmd mydetect BufRead,BufNewFile *.ejs setlocal filetype=html
+au BufRead,BufNewFile *.ejs set filetype=html
