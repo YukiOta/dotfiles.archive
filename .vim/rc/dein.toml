@@ -2,6 +2,30 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
+repo = 'scrooloose/syntastic'
+hook_add = '''
+" error message format
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+" open location list with error
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+
+" check file with open
+let g:syntastic_check_on_open = 1
+" check file with save
+let g:syntastic_check_on_save = 1
+
+" do not check with wq
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_python_checkers = ["flake8"]
+let g:syntastic_javascript_checkers = ['eslint']
+'''
+
+[[plugins]]
 repo = 'scrooloose/nerdtree'
 hook_add = '''
 let NERDTreeShowHidden = 1
@@ -61,29 +85,6 @@ let g:airline#extensions#branch#enabled = 1
 repo = 'Townk/vim-autoclose'
 
 
-[[plugins]]
-repo = 'scrooloose/syntastic'
-hook_add = '''
-" error message format
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-" open location list with error
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-
-" check file with open
-let g:syntastic_check_on_open = 1
-" check file with save
-let g:syntastic_check_on_save = 1
-
-" do not check with wq
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_python_checkers = ["flake8"]
-let g:syntastic_javascript_checkers = ['eslint']
-'''
 
 
 [[plugins]]
@@ -149,3 +150,4 @@ nmap <C-n> <Plug>(yankround-next)
 " 履歴取得数
 let g:yankround_max_history = 50
 '''
+

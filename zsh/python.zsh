@@ -4,7 +4,8 @@
 export PYTHONPATH=$HOME/algencan-2.4.0/bin/py:$PYTHONPATH
 export PYENV_ROOT="$HOME/.pyenv"
 if [ -d ${PYENV_ROOT} ]; then
-  export PATH="$PYENV_ROOT/bin:$PATH"
+  # export PATH="$PYENV_ROOT/bin:$PATH"
+  export PATH="$PATH:$PYENV_ROOT/bin"
   eval "$(pyenv init -)"
   if [ -d ${PYENV_ROOT}/plugins/pyenv-virtualenv ]; then
     eval "$(pyenv virtualenv-init -)"
