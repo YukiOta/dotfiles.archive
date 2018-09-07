@@ -15,6 +15,9 @@ export ZLS_COLORS=$LS_COLORS
 # lsコマンド時、自動で色がつく(ls -Gのようなもの？)
 # export CLICOLOR=true
 
+# editor setting
+export EDITOR=code
+
 # ----------
 # completion
 # ----------
@@ -86,3 +89,7 @@ if is_tmux_runnning; then
 elif is_screen_running; then
   echo "This is on screen."
 fi
+
+
+# direnv setting
+eval "$(direnv hook zsh)"
