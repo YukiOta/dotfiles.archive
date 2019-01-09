@@ -1,14 +1,14 @@
 # alias
 case ${OSTYPE} in
   darwin*)
-	alias ls='ls -tAGF'
+	alias ls='ls -AGF'
     ;;
   freebsd*)
-	alias ls='ls -tAGF'
+	alias ls='ls -AGF'
     ;;
   linux*)
 	eval "$(dircolors -b)"
-	alias ls='ls --color=auto -AGFt'
+	alias ls='ls --color=auto -AGF'
     ;;
 esac
 # alias ls='ls -aF'
