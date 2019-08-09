@@ -16,7 +16,7 @@ export ZLS_COLORS=$LS_COLORS
 # export CLICOLOR=true
 
 # editor setting
-export EDITOR=code
+export EDITOR="$(which code) --wait"
 
 # ----------
 # completion
