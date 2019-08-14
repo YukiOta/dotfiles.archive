@@ -22,3 +22,9 @@ source ${ZSH_HOME}aliases.zsh
 [[ -f /Users/YukiOta/.nodebrew/node/v8.11.2/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/YukiOta/.nodebrew/node/v8.11.2/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 # added by travis gem
 [ -f /Users/YukiOta/.travis/travis.sh ] && source /Users/YukiOta/.travis/travis.sh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/YukiOta/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/YukiOta/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/YukiOta/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/YukiOta/google-cloud-sdk/completion.zsh.inc'; fi
