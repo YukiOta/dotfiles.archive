@@ -24,7 +24,7 @@ source ${ZSH_HOME}aliases.zsh
 [ -f /Users/YukiOta/.travis/travis.sh ] && source /Users/YukiOta/.travis/travis.sh
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/YukiOta/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/YukiOta/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/yukiota/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yukiota/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/YukiOta/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/YukiOta/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/yukiota/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yukiota/google-cloud-sdk/completion.zsh.inc'; fi
