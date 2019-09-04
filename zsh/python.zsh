@@ -1,7 +1,7 @@
 # ----------
 # pyenv
 # ----------
-export PYTHONPATH=$HOME/algencan-2.4.0/bin/py:$PYTHONPATH
+# export PYTHONPATH=$HOME/algencan-2.4.0/bin/py:$PYTHONPATH
 export PYENV_ROOT="$HOME/.pyenv"
 if [ -d ${PYENV_ROOT} ]; then
   # export PATH="$PYENV_ROOT/bin:$PATH"
