@@ -29,3 +29,10 @@ fi
 # else
 #   pyenv activate ubuntu
 # fi
+
+
+# ----------
+# For my libraries
+# ----------
+# Include chromedriver
+export PATH=$PATH:$HOME/.my_libraries
