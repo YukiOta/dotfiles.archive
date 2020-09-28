@@ -4,3 +4,4 @@
 # python versionもいらない
 /.python-version
 
+.history

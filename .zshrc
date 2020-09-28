@@ -9,6 +9,7 @@ fi
 source ${ZSH_HOME}zplug.zsh
 source ${ZSH_HOME}set_option.zsh
 source ${ZSH_HOME}python.zsh
+source ${ZSH_HOME}golang.zsh
 source ${ZSH_HOME}aliases.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
