@@ -4,4 +4,4 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/lo
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # ローカルインストールしたpackageを実行するためのpath
-export PATH=$PATH:./node_modules/.bin
+export PATH=./node_modules/.bin:$PATH
